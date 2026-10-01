@@ -1,0 +1,25 @@
+{
+  "entity": {
+    "select": {
+      "program": { "default": "mdi:sleep" },
+      "intensity": { "default": "mdi:signal-cellular-2" }
+    },
+    "sensor": {
+      "current_program": { "default": "mdi:sleep" },
+      "program_end": { "default": "mdi:alarm-check" }
+    },
+    "switch": {
+      "program": { "default": "mdi:power-sleep" },
+      "led": { "default": "mdi:led-on" },
+      "led_auto_off": { "default": "mdi:timer-off-outline" },
+      "vibration": { "default": "mdi:vibrate" }
+    },
+    "time": {
+      "wake_time": { "default": "mdi:alarm" }
+    }
+  },
+  "services": {
+    "start_program": { "service": "mdi:play" },
+    "stop_program": { "service": "mdi:stop" }
+  }
+}

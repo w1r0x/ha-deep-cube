@@ -1,0 +1,17 @@
+{
+  "domain": "deep_cube",
+  "name": "deep sleep cube",
+  "bluetooth": [
+    { "local_name": "deep.r", "connectable": true },
+    { "local_name": "deep.n", "connectable": true }
+  ],
+  "codeowners": ["@w1r0x"],
+  "config_flow": true,
+  "dependencies": ["bluetooth_adapters"],
+  "documentation": "https://github.com/w1r0x/ha-deep-cube",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/w1r0x/ha-deep-cube/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

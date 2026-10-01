@@ -1,0 +1,151 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "description": "Choose the cube to add.",
+        "data": {
+          "address": "Device"
+        }
+      },
+      "bluetooth_confirm": {
+        "description": "Do you want to add {name}?"
+      }
+    },
+    "abort": {
+      "already_configured": "This cube is already added.",
+      "no_devices_found": "No cubes found in range. Close the deep up app on the phone: a cube with an active connection is not visible.",
+      "not_supported": "This device is not supported."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Polling interval"
+        },
+        "data_description": {
+          "scan_interval": "How often Home Assistant connects to the cube to read its state. The deep up app cannot connect during the few seconds a poll takes."
+        }
+      }
+    }
+  },
+  "entity": {
+    "select": {
+      "program": {
+        "name": "Program",
+        "state": {
+          "just_sleep": "Just Sleep",
+          "bear_sleep": "Bear Sleep",
+          "dream_whale": "Dream Whale",
+          "dreamcatcher": "Dreamcatcher"
+        }
+      },
+      "intensity": {
+        "name": "Intensity",
+        "state": {
+          "low": "Low",
+          "normal": "Normal",
+          "max": "Maximum"
+        }
+      }
+    },
+    "sensor": {
+      "current_program": {
+        "name": "Current program",
+        "state": {
+          "none": "None",
+          "just_sleep": "Just Sleep",
+          "bear_sleep": "Bear Sleep",
+          "dream_whale": "Dream Whale",
+          "dreamcatcher": "Dreamcatcher",
+          "other": "Other"
+        }
+      },
+      "program_end": {
+        "name": "Program end"
+      }
+    },
+    "switch": {
+      "led": {
+        "name": "LED indication"
+      },
+      "led_auto_off": {
+        "name": "Turn indication off after 20 s"
+      },
+      "vibration": {
+        "name": "Vibration"
+      }
+    },
+    "time": {
+      "wake_time": {
+        "name": "Wake-up time"
+      }
+    }
+  },
+  "selector": {
+    "program": {
+      "options": {
+        "just_sleep": "Just Sleep",
+        "bear_sleep": "Bear Sleep",
+        "dream_whale": "Dream Whale",
+        "dreamcatcher": "Dreamcatcher"
+      }
+    },
+    "intensity": {
+      "options": {
+        "low": "Low",
+        "normal": "Normal",
+        "max": "Maximum"
+      }
+    }
+  },
+  "services": {
+    "start_program": {
+      "name": "Start program",
+      "description": "Starts a sleep program that runs until the wake-up time. Omitted parameters are taken from the entities of the cube.",
+      "fields": {
+        "device_id": {
+          "name": "Cube",
+          "description": "The cube to start the program on."
+        },
+        "program": {
+          "name": "Program",
+          "description": "The program to start."
+        },
+        "intensity": {
+          "name": "Intensity",
+          "description": "The intensity of the program."
+        },
+        "wake_time": {
+          "name": "Wake-up time",
+          "description": "The program runs until the next occurrence of this time."
+        }
+      }
+    },
+    "stop_program": {
+      "name": "Stop program",
+      "description": "Stops the running program.",
+      "fields": {
+        "device_id": {
+          "name": "Cube",
+          "description": "The cube to stop the program on."
+        }
+      }
+    }
+  },
+  "exceptions": {
+    "cannot_connect": {
+      "message": "Cannot reach the cube. Check that it is in Bluetooth range and that the deep up app is closed. Details: {error}"
+    },
+    "command_failed": {
+      "message": "The cube did not carry out the command: {error}"
+    },
+    "start_not_confirmed": {
+      "message": "The cube accepted the command but did not start the program. The time left until the wake-up time may be too short."
+    },
+    "device_not_found": {
+      "message": "The selected device is not a set up deep cube."
+    }
+  }
+}

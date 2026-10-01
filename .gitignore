@@ -1,0 +1,13 @@
+# Local Python environment
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local data: the cube address, raw logs and the like
+.local/
+
+# Raw logs: HCI dumps from the phone contain unrelated traffic and pairing keys
+btsnoop_hci*.log
+bugreport*.zip
+*.apk

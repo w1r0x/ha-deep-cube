@@ -1,0 +1,38 @@
+start_program:
+  fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          integration: deep_cube
+    program:
+      required: false
+      selector:
+        select:
+          translation_key: program
+          options:
+            - just_sleep
+            - bear_sleep
+            - dream_whale
+            - dreamcatcher
+    intensity:
+      required: false
+      selector:
+        select:
+          translation_key: intensity
+          options:
+            - low
+            - normal
+            - max
+    wake_time:
+      required: false
+      selector:
+        time:
+
+stop_program:
+  fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          integration: deep_cube
